@@ -18,7 +18,7 @@ class ScoreCountingController extends Controller
         $team = $request->input('team');
         $score = session($team . 'Score', 0) + 1;
         session([$team . 'Score' => $score]);
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function minusScore(Request $request)
@@ -26,13 +26,13 @@ class ScoreCountingController extends Controller
         $team = $request->input('team');
         $score = session($team . 'Score', 0) == 0 ? 0 : session($team . 'Score', 0) - 1;
         session([$team . 'Score' => $score]);
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     public function resetScore()
     {
         session(['team1Score' => 0]);
         session(['team2Score' => 0]);
-        return redirect('/dashboard');
+        return redirect('/');
     }
 }

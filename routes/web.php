@@ -14,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
-
-Route::get('/dashboard', [ScoreCountingController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard/reset-score', [ScoreCountingController::class, 'resetScore'])->middleware(['auth'])->name('reset_score');
-Route::post('/dashboard/update-score', [ScoreCountingController::class, 'updateScore'])->middleware(['auth']);
-Route::post('/dashboard/minus-score', [ScoreCountingController::class, 'minusScore'])->middleware(['auth']);
+Route::get('/', [ScoreCountingController::class, 'index'])->name('dashboard');
+Route::get('/reset-score', [ScoreCountingController::class, 'resetScore'])->name('reset_score');
+Route::post('/update-score', [ScoreCountingController::class, 'updateScore']);
+Route::post('/minus-score', [ScoreCountingController::class, 'minusScore']);
 
 require __DIR__ . '/auth.php';

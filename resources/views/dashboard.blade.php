@@ -10,7 +10,7 @@
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="grid grid-cols-6 p-4 bg-white border-b border-gray-200">
                     <div class="col-span-1 flex items-center">
-                        <form action="/dashboard/minus-score" method="post">
+                        <form action="/minus-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team1">
                             <button
@@ -25,7 +25,7 @@
                     <div class="col-span-4 text-center">
                         <p class="text-4xl font-extrabol text-blue-700">Team 1</p>
                         <p class="text-9xl font-extrabol text-blue-700">{{ $team1Score }}</p>
-                        <form action="/dashboard/update-score" method="post">
+                        <form action="/update-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team1">
                             <x-button
@@ -37,7 +37,7 @@
                         </form>
                     </div>
                     <div class="col-span-1 flex items-center justify-end">
-                        <form action="/dashboard/update-score" method="post">
+                        <form action="/update-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team1">
                             <button
@@ -53,7 +53,7 @@
 
                 <div class="grid grid-cols-6 p-4 bg-white border-b border-gray-200">
                     <div class="col-span-1 flex items-center">
-                        <form action="/dashboard/minus-score" method="post">
+                        <form action="/minus-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team2">
                             <button
@@ -68,7 +68,7 @@
                     <div class="col-span-4 text-center">
                         <p class="text-4xl font-extrabol text-red-600">Team 2</p>
                         <p class="text-9xl font-extrabol text-red-600">{{ $team2Score }}</p>
-                        <form action="/dashboard/update-score" method="post">
+                        <form action="/update-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team2">
                             <x-button
@@ -80,7 +80,7 @@
                         </form>
                     </div>
                     <div class="col-span-1 flex items-center justify-end">
-                        <form action="/dashboard/update-score" method="post">
+                        <form action="/update-score" method="post">
                             @csrf
                             <input type="hidden" name="team" value="team2">
                             <button
