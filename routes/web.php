@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ScoreCountingController::class, 'index'])->name('dashboard');
 Route::get('/reset-score', [ScoreCountingController::class, 'resetScore'])->name('reset_score');
-Route::post('/update-score', [ScoreCountingController::class, 'updateScore']);
-Route::post('/minus-score', [ScoreCountingController::class, 'minusScore']);
+Route::post('/update-score', [ScoreCountingController::class, 'updateScore'])->name('update_score');
+Route::post('/minus-score', [ScoreCountingController::class, 'minusScore'])->name('minus_score');
 
 require __DIR__ . '/auth.php';
