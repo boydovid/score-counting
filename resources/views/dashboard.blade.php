@@ -12,6 +12,7 @@
                     <form action="/minus-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team1">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <button
                             type="submit"
                             class="text-blue-700">
@@ -22,11 +23,12 @@
                     </form>
                 </div>
                 <div class="col-span-4 text-center">
-                    <p class="text-4xl font-extrabol text-blue-700">Team 1</p>
+                    <p class="text-4xl font-extrabol text-blue-700">PCA Team</p>
                     <p class="text-9xl font-extrabol text-blue-700">{{ $team1Score }}</p>
                     <form action="/update-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team1">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <x-button
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-4xl px-5 py-2.5 text-center"
                             type="submit"
@@ -39,6 +41,7 @@
                     <form action="/update-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team1">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <button
                             type="submit"
                             class="text-blue-700">
@@ -56,6 +59,7 @@
                     <form action="/minus-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team2">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <button
                             type="submit"
                             class="text-red-600">
@@ -66,11 +70,12 @@
                     </form>
                 </div>
                 <div class="col-span-4 text-center">
-                    <p class="text-4xl font-extrabol text-red-600">Team 2</p>
+                    <p class="text-4xl font-extrabol text-red-600">Enemy Team</p>
                     <p class="text-9xl font-extrabol text-red-600">{{ $team2Score }}</p>
                     <form action="/update-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team2">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <x-button
                             class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-4xl px-5 py-2.5 text-center"
                             type="submit"
@@ -83,6 +88,7 @@
                     <form action="/update-score" method="post">
                         @csrf
                         <input type="hidden" name="team" value="team2">
+                        <input type="hidden" name="id" value="{{ $id }}">
                         <button
                             type="submit"
                             class="text-red-600">
@@ -99,7 +105,7 @@
     <div class="">
         <x-button
             class="absolute bottom-0 left-0 m-4 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center"
-            onclick="window.location='{{ route('reset_score') }}'"
+            onclick="window.location='{{ route('reset_score', ['id' => $id]) }}'"
         >
             Reset
         </x-button>
