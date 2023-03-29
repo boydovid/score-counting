@@ -43,7 +43,7 @@ class ScoreCountingController extends Controller
         session(['team1Score' => $scoreRecord->team1Score]);
         session(['team2Score' => $scoreRecord->team2Score]);
         $id = $scoreRecord->id;
-        $date = Carbon::parse($scoreRecord->score_record_date)->format('Y-m-d');
+        $date = Carbon::now()->format('Y-m-d');
         $team1Score = session('team1Score', $scoreRecord->team1Score);
         $team2Score = session('team2Score', $scoreRecord->team2Score);
         return view('dashboard', compact('team1Score', 'team2Score', 'id', 'date'));
