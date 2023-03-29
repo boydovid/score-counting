@@ -1,6 +1,6 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-2">
-        <div class="bg-gray-200 rounded-3xl overflow-auto">
+        <div class="bg-white rounded-3xl overflow-auto">
             <table class="w-full table-auto">
                 <thead>
                     <tr

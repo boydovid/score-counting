@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-2">
-            <div class="grid grid-cols-6 p-4 bg-gray-200 rounded-3xl">
+            <div class="grid grid-cols-6 p-4 bg-white rounded-3xl">
                 <div class="col-span-1 flex items-center">
                     <form action="/minus-score" method="post">
                         @csrf
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-2">
-            <div class="grid grid-cols-6 p-4 bg-gray-200 rounded-3xl">
+            <div class="grid grid-cols-6 p-4 bg-white rounded-3xl">
                 <div class="col-span-1 flex items-center">
                     <form action="/minus-score" method="post">
                         @csrf
