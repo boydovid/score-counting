@@ -108,7 +108,7 @@
     >
         Reset
     </x-button> --}}
-    <div class="absolute bottom-0 right-0 m-2">
+    <div class="flex justify-center m-2">
         <form action="/save-score-record" method="post">
             @csrf
             <input type="hidden" name="id" value="{{ $id }}">
@@ -117,6 +117,7 @@
             <x-button
                 class="text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center"
                 type="submit"
+                onclick="return confirm('Confirm Save?')"
             >
                 Save
             </x-button>

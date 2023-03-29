@@ -86,6 +86,12 @@ class ScoreCountingController extends Controller
 
     public function saveScoreRecord(Request $request)
     {
+        $team1Score = session('team1Score', 0);
+        $team2Score = session('team2Score', 0);
+
+        if ($team1Score == 0 && $team2Score == 0) {
+            return redirect('/');
+        }
         $id = $request->input('id');
         $date = $request->input('date');
         $scoreRecord = $this->model->where('id', $id)->update([
