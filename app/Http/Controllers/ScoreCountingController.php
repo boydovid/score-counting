@@ -43,9 +43,10 @@ class ScoreCountingController extends Controller
         session(['team1Score' => $scoreRecord->team1Score]);
         session(['team2Score' => $scoreRecord->team2Score]);
         $id = $scoreRecord->id;
+        $date = Carbon::parse($scoreRecord->score_record_date)->format('Y-m-d');
         $team1Score = session('team1Score', $scoreRecord->team1Score);
         $team2Score = session('team2Score', $scoreRecord->team2Score);
-        return view('dashboard', compact('team1Score', 'team2Score', 'id'));
+        return view('dashboard', compact('team1Score', 'team2Score', 'id', 'date'));
     }
 
     public function updateScore(Request $request)
@@ -85,6 +86,12 @@ class ScoreCountingController extends Controller
 
     public function saveScoreRecord(Request $request)
     {
-
+        $id = $request->input('id');
+        $date = $request->input('date');
+        $scoreRecord = $this->model->where('id', $id)->update([
+            'score_record_date' => Carbon::parse($date)->format('Y-m-d H:i:s'),
+            'status' => 1,
+        ]);
+        return redirect('/');
     }
 }

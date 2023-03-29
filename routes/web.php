@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ScoreCountingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\ScoreRecordView;
+use App\Http\Controllers\ScoreCountingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reset-score', [ScoreCountingController::class, 'resetScore'])->name('reset_score');
     Route::post('/update-score', [ScoreCountingController::class, 'updateScore'])->name('update_score');
     Route::post('/minus-score', [ScoreCountingController::class, 'minusScore'])->name('minus_score');
+    Route::post('/save-score-record', [ScoreCountingController::class, 'saveScoreRecord'])->name('save_score_record');
+
+    Route::get('/score/record', ScoreRecordView::class)->name('score_record');
 });
 
 

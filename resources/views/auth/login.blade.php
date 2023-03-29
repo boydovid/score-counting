@@ -1,10 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                {{-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" /> --}}
-                <img src="{{ asset('logo.png') }}" width="80" />
-            </a>
+            {{-- <img src="{{ asset('logo.png') }}" width="100" /> --}}
         </x-slot>
 
         <!-- Session Status -->
@@ -16,6 +13,9 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
+            <div class="flex justify-center mb-4">
+                <img src="{{ asset('logo.png') }}" width="120" />
+            </div>
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />
@@ -36,7 +36,7 @@
             <!-- Remember Me -->
             {{-- <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-200 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                    <input id="remember_me" type="checkbox" class="rounded border-gray-200 text-blue-700 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div> --}}
